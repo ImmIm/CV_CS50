@@ -1,6 +1,6 @@
 # Kiryl Savich's CV
 
-##https://immim.github.io/CV_CS50/
+##(https://immim.github.io/CV_CS50/)
 
 
 
