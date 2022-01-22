@@ -1,0 +1,1907 @@
+// Fonts
+@font-face {  //font for text
+    font-family: BreeSerif;
+    src: url(/Fonts/BreeSerif-Regular.ttf);
+}
+
+$color-background:rgba(3,3,3,255); 
+$color-white: rgb(240, 236 ,231); //background default color
+
+
+// layout settings
+
+* {
+    box-sizing: border-box;
+    font-family: BreeSerif;
+}
+
+body{
+    background-color: $color-background;
+    position: relative;
+}
+
+//Desctop-Xlarge xxl
+@media (min-width: 1400px) {
+
+    .nav{
+        position: sticky;
+        margin-right: 30px;
+        top: 20px;
+        height: 100px;
+        width: 50px;
+        float: right;
+        z-index: 1;
+        background-color: transparent;
+        span{
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            bottom: 20px;
+            
+            background: grey;
+            border-radius: 3px;
+            
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+  
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+            &:first-child{
+                transform-origin: 0% 100%;
+            }
+
+            &:nth-last-child(2){
+                transform-origin: 0% 100%;
+            }
+        }
+
+        #menu{
+            text-align: right;
+        }
+
+        .burgerbutton{
+            width: 33px;
+            height: 27px;
+            opacity: 0;
+            display: block;
+            z-index: 2;
+            cursor: pointer;
+            &:checked{
+                ~.bur{     //all spans
+                    opacity: 1;
+                    transform: rotate(45deg) translate(-2px, -1px);
+                    background: darkgrey;
+                    &:nth-last-child(3){  //middle one
+                        opacity: 0;
+                        transform: rotate(0deg);
+                    }
+                    &:nth-last-child(2){  //last one
+                        transform: rotate(-45deg) translate(0, -1px);
+                    }
+                }
+
+                ~ #menu li:first-child{
+                    transition: opacity 0.25s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(2){
+                    transition: opacity 0.5s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(3){
+                    transition: opacity 0.75s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(4){
+                    transition: opacity 1s ease;
+                    opacity: 1;
+                }
+
+                ~ #menu a:hover{
+                    transition: color 0.5s ease;
+                    color: grey;
+                    
+                }
+            }
+        }
+
+        #menu{
+            position: relative;
+            top: -15px;
+            left: -78px;
+            padding-left: 15px;
+            list-style-type: none;
+            background-color: transparent;
+            li{
+                background-color: transparent;
+                color: grey;
+                transition: opacity 0.5s ease;
+                opacity: 0;
+                &:first-child{
+                    transition: opacity 1s ease;
+                    opacity: 0;
+                }
+                &:nth-child(2){
+                    transition: opacity 0.75s ease;
+                    opacity: 0;
+                }
+                &:nth-child(3){
+                    transition: opacity 0.5s ease;
+                    opacity: 0;
+                }
+                &:nth-child(4){
+                    transition: opacity 0.25s ease;
+                    opacity: 0;
+                }
+                a{
+                    color: darkgrey;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .header{
+        height: 500px;
+        height: 300px;
+        background-image: url(./Assets/header-background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        #myVideo {
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        h1{
+            position: absolute;
+            z-index: 100;
+            color: white;
+            margin: 40px auto;
+            text-align: center;
+            line-height: 1.7;
+            padding-left: 40%;
+            p{
+                font-size: 64px;
+            }
+            p em{
+                font-size: 40px;
+            }
+            p:last-child{
+                font-size: 20px;
+                line-height: 0.8;
+            }
+
+        }
+    }
+
+    .myself {
+        width: 75vw;
+        height: 480px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: $color-background;
+        color: white;
+        table{
+            margin: 0 auto;
+        }
+        .photoself{
+            width: 400px;
+            height: 450px;
+            img{
+                width: 250px;
+                position: relative;
+                top: 50px;
+                left: 70px;
+                overflow: hidden;
+            }
+            p{
+                float: right;
+            }
+        }
+
+        .description{
+            position: relative;
+            bottom: 70px;
+            right: 40px;
+            width: 300px;
+            height: 300px;
+            .arrow{
+                opacity: 1;
+            }
+            #arrow{
+                width: 150px; 
+                float: left;
+                opacity: 1;
+            }
+        }
+    }
+
+    .edu{
+        height: 1700px;
+        padding-top: 50px;
+        background-color: $color-white;
+        text-align: center;
+        .line{
+            position: absolute;
+            left: 50%;
+            top: 900px;
+            width: 10px;
+            height: 1500px;
+            background-color: black;
+        }
+        .stydies{
+            padding-left: 20vw;
+        }
+    }
+
+    #circle{
+        position: sticky;
+        display: inline-block;
+        margin-top: 230px;
+        margin-bottom: 300px;
+        left: calc(50% - 13px);
+        top: 10px;
+        bottom: 250px;
+        z-index: 1000;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    #circle1{
+        position: sticky;
+        display: inline-block;
+        height: 36px;
+        margin-top: 220px;
+        margin-bottom: 240px;
+        left: calc(50% - 13px);
+        top: 50px;
+        z-index: 1000;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    #circle2{
+        position: absolute;
+        display: inline-block;
+        height: 36px;
+        left: calc(50% - 13px);
+        top:2250px;
+        z-index: 1050;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    .telran{
+        position: absolute;
+        top: 1000px;
+        #logoTR{
+            width: 70px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    .telranprojects{
+        position: absolute;
+        top: 1000px;
+        left: calc(50% + 150px);
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNameTR{
+            display: inline-block;
+            position: absolute;
+            right: 100px;
+            top: 70px;
+            color: white;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .exampleTR{
+            position: relative;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+
+    .cs50projects{
+        position: absolute;
+        top: 1500px;
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNamecs50{
+            display: inline-block;
+            position: absolute;
+            right: 69px;
+            top: 70px;
+            color: white;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .examplecs50{
+            position: relative;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+
+    .bsuprojects{
+        position: absolute;
+        top: 2000px;
+        left: calc(50% + 150px);
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNamebsu{
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 70px;
+            color: black;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .examplebsu{
+            position: relative;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                    
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+
+    .cs50{
+        position: absolute;
+        top: 1500px;
+        left: calc(50% + 150px);
+        #logocs50{
+            width: 70px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    .bsu{
+        position: absolute;
+        top: 2000px;
+        h2{
+            font-size: 24px;
+        }
+        #logobsu{
+            width: 170px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        #faculty{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    #constr{
+        width: 100%;
+        position: relative;
+        z-index: 10000000000000;
+    }
+
+    .portfolio{
+        padding-top: 60px;
+        height: 500px;
+        background-color: $color-background;
+        color: $color-white;
+        h2{
+            text-align: center;
+        }
+    }
+
+    .portfoliowrapper{
+        padding-top: 50px;
+        display: flex;
+        margin: 0 10%;
+        justify-content: space-between;
+        .portfolioproject{
+            height: 150px;
+            background-color: white;
+            p{
+                padding-top: 10px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+
+    .contactme{
+        padding-top: 20px;
+        height: 550px;
+        background-color: $color-white;
+        h2{
+            text-align: center;
+        }
+        .contactmewrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 12%;
+            padding-top: 50px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 30px 0;
+        }
+    }
+
+    .contactmeflex2{
+        p{
+            font-size:24px;
+            text-align: center;
+        }
+    }
+    footer{
+        height: 150px;
+        margin: 0 10%;
+        background-color: $color-background;
+        color: $color-white;
+    }
+
+    .bi{
+        color: $color-white;
+        font-size: 48px;
+        padding:0 20px;
+    }
+
+    .socialmedia{
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+// Desctop-large lg
+@media (max-width: 1399px) {
+
+    .nav{
+        position: sticky;
+        margin-right: 30px;
+        top: 20px;
+        height: 100px;
+        width: 50px;
+        float: right;
+        z-index: 1;
+        background-color: transparent;
+        span{
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            bottom: 20px;
+            
+            background: grey;
+            border-radius: 3px;
+            
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+  
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+            &:first-child{
+                transform-origin: 0% 100%;
+            }
+
+            &:nth-last-child(2){
+                transform-origin: 0% 100%;
+            }
+        }
+
+        #menu{
+            text-align: right;
+        }
+
+        .burgerbutton{
+            width: 33px;
+            height: 27px;
+            opacity: 0;
+            display: block;
+            z-index: 2;
+            cursor: pointer;
+            &:checked{
+                ~.bur{     //all spans
+                    opacity: 1;
+                    transform: rotate(45deg) translate(-2px, -1px);
+                    background: darkgrey;
+                    &:nth-last-child(3){  //middle one
+                        opacity: 0;
+                        transform: rotate(0deg);
+                    }
+                    &:nth-last-child(2){  //last one
+                        transform: rotate(-45deg) translate(0, -1px);
+                    }
+                }
+
+                ~ #menu li:first-child{
+                    transition: opacity 0.25s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(2){
+                    transition: opacity 0.5s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(3){
+                    transition: opacity 0.75s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(4){
+                    transition: opacity 1s ease;
+                    opacity: 1;
+                }
+
+                ~ #menu a:hover{
+                    transition: color 0.5s ease;
+                    color: grey;
+                    
+                }
+            }
+        }
+
+        #menu{
+            position: relative;
+            top: -15px;
+            left: -78px;
+            padding-left: 15px;
+            list-style-type: none;
+            background-color: transparent;
+            li{
+                background-color: transparent;
+                color: grey;
+                transition: opacity 0.5s ease;
+                opacity: 0;
+                &:first-child{
+                    transition: opacity 1s ease;
+                    opacity: 0;
+                }
+                &:nth-child(2){
+                    transition: opacity 0.75s ease;
+                    opacity: 0;
+                }
+                &:nth-child(3){
+                    transition: opacity 0.5s ease;
+                    opacity: 0;
+                }
+                &:nth-child(4){
+                    transition: opacity 0.25s ease;
+                    opacity: 0;
+                }
+                a{
+                    color: darkgrey;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .header{
+        height: 500px;
+        height: 300px;
+        background-image: url(./Assets/header-background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        #myVideo {
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        h1{
+            position: absolute;
+            z-index: 100;
+            color: white;
+            margin: 40px auto;
+            text-align: center;
+            line-height: 1.7;
+            padding-left: 40%;
+            p{
+                font-size: 64px;
+            }
+            p em{
+                font-size: 40px;
+            }
+            p:last-child{
+                font-size: 20px;
+                line-height: 0.8;
+            }
+
+        }
+    }
+
+    .myself {
+        width: 75vw;
+        height: 480px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: $color-background;
+        color: white;
+        table{
+            margin: 0 auto;
+        }
+        .photoself{
+            width: 400px;
+            height: 450px;
+            img{
+                width: 250px;
+                position: relative;
+                top: 50px;
+                left: 70px;
+                overflow: hidden;
+            }
+            p{
+                float: right;
+            }
+        }
+
+        .description{
+            position: relative;
+            bottom: 70px;
+            right: 40px;
+            width: 300px;
+            height: 300px;
+            .arrow{
+                opacity: 1;
+            }
+            #arrow{
+                width: 150px; 
+                float: left;
+                opacity: 1;
+            }
+        }
+    }
+
+    .edu{
+        height: 1700px;
+        padding-top: 50px;
+        background-color: $color-white;
+        text-align: center;
+        .line{
+            position: absolute;
+            left: 50%;
+            top: 900px;
+            width: 10px;
+            height: 1500px;
+            background-color: black;
+        }
+        .stydies{
+            padding-left: 20vw;
+        }
+    }
+
+    #circle{
+        position: sticky;
+        display: inline-block;
+        margin-top: 230px;
+        margin-bottom: 300px;
+        left: calc(50% - 13px);
+        top: 10px;
+        bottom: 250px;
+        z-index: 1000;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    #circle1{
+        position: sticky;
+        display: inline-block;
+        height: 36px;
+        margin-top: 220px;
+        margin-bottom: 240px;
+        left: calc(50% - 13px);
+        top: 50px;
+        z-index: 1000;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    #circle2{
+        position: absolute;
+        display: inline-block;
+        height: 36px;
+        left: calc(50% - 13px);
+        top:2250px;
+        z-index: 1050;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    .telran{
+        position: absolute;
+        width: 300px;
+        left: 100px;
+        top: 1000px;
+        #logoTR{
+            width: 70px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    .telranprojects{
+        position: absolute;
+        top: 1000px;
+        width: 300px;
+        left: calc(50% + 150px);
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNameTR{
+            display: inline-block;
+            position: absolute;
+            right: 100px;
+            top: 70px;
+            color: white;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .exampleTR{
+            position: relative;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+
+    .cs50projects{
+        position: absolute;
+        left: 100px;
+        top: 1500px;
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNamecs50{
+            display: inline-block;
+            position: absolute;
+            right: 69px;
+            top: 70px;
+            color: white;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .examplecs50{
+            position: relative;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+
+    .bsuprojects{
+        position: absolute;
+        top: 2000px;
+        left: calc(50% + 150px);
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNamebsu{
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 70px;
+            color: black;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .examplebsu{
+            position: relative;
+            z-index: 100;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                    
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+
+    .cs50{
+        position: absolute;
+        top: 1500px;
+        width: 300px;
+        left: calc(50% + 150px);
+        #logocs50{
+            width: 70px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    .bsu{
+        position: absolute;
+        left: 100px;
+        top: 2000px;
+        width: 300px;
+        h2{
+            font-size: 20px;
+        }
+        #logobsu{
+            width: 170px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        #faculty{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    #constr{
+        width: 100%;
+        position: relative;
+        z-index: 10000000000000;
+    }
+
+    .portfolio{
+        padding-top: 60px;
+        height: 500px;
+        background-color: $color-background;
+        color: $color-white;
+        h2{
+            text-align: center;
+        }
+    }
+
+    .portfoliowrapper{
+        padding-top: 50px;
+        display: flex;
+        margin: 0 10%;
+        justify-content: space-between;
+        .portfolioproject{
+            height: 150px;
+            background-color: white;
+            p{
+                padding-top: 10px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+
+    .contactme{
+        padding-top: 20px;
+        height: 550px;
+        background-color: $color-white;
+        h2{
+            text-align: center;
+        }
+        .contactmewrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 12%;
+            padding-top: 50px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 30px 0;
+        }
+    }
+
+    .contactmeflex2{
+        p{
+            font-size:24px;
+            text-align: center;
+        }
+    }
+    footer{
+        height: 150px;
+        margin: 0 10%;
+        background-color: $color-background;
+        color: $color-white;
+    }
+
+    .bi{
+        color: $color-white;
+        font-size: 48px;
+        padding:0 20px;
+    }
+
+    .socialmedia{
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    
+
+
+}
+
+// Medium devices md
+@media (max-width: 996px) {
+    
+    .nav{
+        position: sticky;
+        margin-right: 30px;
+        top: 20px;
+        height: 100px;
+        width: 50px;
+        float: right;
+        z-index: 1;
+        background-color: transparent;
+        span{
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            bottom: 20px;
+            
+            background: grey;
+            border-radius: 3px;
+            
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+  
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+            &:first-child{
+                transform-origin: 0% 100%;
+            }
+
+            &:nth-last-child(2){
+                transform-origin: 0% 100%;
+            }
+        }
+
+        #menu{
+            text-align: right;
+        }
+
+        .burgerbutton{
+            width: 33px;
+            height: 27px;
+            opacity: 0;
+            display: block;
+            z-index: 2;
+            cursor: pointer;
+            &:checked{
+                ~.bur{     //all spans
+                    opacity: 1;
+                    transform: rotate(45deg) translate(-2px, -1px);
+                    background: darkgrey;
+                    &:nth-last-child(3){  //middle one
+                        opacity: 0;
+                        transform: rotate(0deg);
+                    }
+                    &:nth-last-child(2){  //last one
+                        transform: rotate(-45deg) translate(0, -1px);
+                    }
+                }
+
+                ~ #menu li:first-child{
+                    transition: opacity 0.25s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(2){
+                    transition: opacity 0.5s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(3){
+                    transition: opacity 0.75s ease;
+                    opacity: 1;
+                }
+                ~ #menu li:nth-child(4){
+                    transition: opacity 1s ease;
+                    opacity: 1;
+                }
+
+                ~ #menu a:hover{
+                    transition: color 0.5s ease;
+                    color: grey;
+                    
+                }
+            }
+        }
+
+        #menu{
+            position: relative;
+            top: -15px;
+            left: -78px;
+            padding-left: 15px;
+            list-style-type: none;
+            z-index: 100000;
+            background-color: transparent;
+            li{
+                background-color: transparent;
+                color: grey;
+                transition: opacity 0.5s ease;
+                opacity: 0;
+                &:first-child{
+                    transition: opacity 1s ease;
+                    opacity: 0;
+                }
+                &:nth-child(2){
+                    transition: opacity 0.75s ease;
+                    opacity: 0;
+                }
+                &:nth-child(3){
+                    transition: opacity 0.5s ease;
+                    opacity: 0;
+                }
+                &:nth-child(4){
+                    transition: opacity 0.25s ease;
+                    opacity: 0;
+                }
+                a{
+                    color: darkgrey;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .header{
+        height: 500px;
+        height: 300px;
+        background-image: url(./Assets/header-background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        #myVideo {
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        h1{
+            position: absolute;
+            z-index: 100;
+            color: white;
+            margin: 40px auto;
+            text-align: center;
+            
+            line-height: 1.7;
+            padding-left: 25%;
+            p{
+                text-align: center;
+                margin: 0 10%;
+                font-size: 64px;
+            }
+            p em{
+                font-size: 40px;
+            }
+            p:last-child{
+                font-size: 20px;
+                line-height: 0.8;
+            }
+
+        }
+    }
+
+    .myself {
+        width: 75vw;
+        height: 480px;
+        margin: 0;
+        padding-top: 40px;
+        background-color: $color-background;
+        color: white;
+        table{
+            margin: 0 auto;
+        }
+        .photoself{
+            width: 400px;
+            height: 450px;
+            img{
+                width: 250px;
+                position: relative;
+                top: 50px;
+                left: 70px;
+                overflow: hidden;
+            }
+            p{
+                float: right;
+            }
+        }
+
+        .description{
+            position: relative;
+            bottom: 70px;
+            right: 40px;
+            width: 300px;
+            height: 300px;
+            .arrow{
+                opacity: 1;
+            }
+            #arrow{
+                width: 150px; 
+                float: left;
+                opacity: 1;
+            }
+        }
+    }
+
+    .edu{
+        height: 1700px;
+        padding-top: 50px;
+        background-color: $color-white;
+        text-align: center;
+        .line{
+            position: absolute;
+            left: 50%;
+            top: 900px;
+            width: 10px;
+            height: 1500px;
+            background-color: black;
+        }
+        .stydies{
+            padding-left: 20vw;
+        }
+    }
+
+    #circle{
+        position: sticky;
+        display: inline-block;
+        margin-top: 230px;
+        margin-bottom: 300px;
+        left: calc(50% - 13px);
+        top: 10px;
+        bottom: 250px;
+        z-index: 1000;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    #circle1{
+        position: sticky;
+        display: inline-block;
+        height: 36px;
+        margin-top: 220px;
+        margin-bottom: 240px;
+        left: calc(50% - 13px);
+        top: 50px;
+        z-index: 1000;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    #circle2{
+        position: absolute;
+        display: inline-block;
+        height: 36px;
+        left: calc(50% - 13px);
+        top:2250px;
+        z-index: 1050;
+        text-decoration: none;
+        color: black;
+        img{
+            width: 36px;
+        }
+    }
+
+    .telran{
+        position: absolute;
+        width: 300px;
+        left: 30px;
+        top: 1000px;
+        font-size: 12px;
+        #logoTR{
+            width: 70px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    .telranprojects{
+        position: absolute;
+        top: 1000px;
+        width: 150px;
+        left: calc(50% + 120px);
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNameTR{
+            display: inline-block;
+            position: absolute;
+            right: 13px;
+            top: 14px;
+            color: white;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .exampleTR{
+            position: relative;
+            z-index: 100;
+            width: 150px;
+            height: 100px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 150px;
+                height: 100px;
+            }
+        }
+    }
+
+    .cs50projects{
+        position: absolute;
+        left: 100px;
+        top: 1500px;
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 13px;
+            top: 14px;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNamecs50{
+            display: inline-block;
+            position: absolute;
+            right: 1px;
+            top: -5px;
+            color: white;
+            z-index: 1000;
+            font-size: 36px;
+        }
+        .examplecs50{
+            position: relative;
+            z-index: 100;
+            width: 150px;
+            height: 100px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 150px;
+                height: 100px;
+            }
+        }
+    }
+
+    .bsuprojects{
+        position: absolute;
+        top: 2000px;
+        left: calc(50% + 150px);
+        h2{
+            text-align: center;
+        }
+        p{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: $color-white;
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+
+        #projectNamebsu{
+            display: inline-block;
+            position: absolute;
+            font-size: 20px;
+            right: 0px;
+            top: 15px;
+            color: black;
+            z-index: 1000;
+        }
+        .examplebsu{
+            position: relative;
+            z-index: 100;
+            width: 150px;
+            height: 100px;
+            margin: 0 auto;
+            padding: 0 0;   
+            align-items: center;
+            a:hover{
+                span{
+                    transition: font-size 0.5s ease;
+                    font-size: 60px;
+                }
+                
+                img{
+                    transition: border-color 0.5s ease;
+                    border-color: rgb(65, 65, 65);
+                    transform: scale(1.1);
+                    
+                }
+
+            }
+            img{
+                border: 3px solid grey;
+                position: relative;
+                margin: 0 auto;
+                z-index: 10;
+                width: 150px;
+                height: 100px;
+            }
+        }
+    }
+
+    .cs50{
+        position: absolute;
+        top: 1500px;
+        width: 300px;
+        left: calc(50% + 70px);
+        font-size: 12px;
+        #logocs50{
+            width: 70px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    .bsu{
+        position: absolute;
+        left: 30px;
+        top: 2000px;
+        width: 300px;
+        font-size: 12px;
+        h2{
+            font-size: 20px;
+        }
+        #logobsu{
+            width: 170px;
+            float: left;
+        }
+        p{
+            padding-top: 5px;
+            clear: both;
+            text-align: justify;
+        }
+        #faculty{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        a{
+            color: black;
+            float: left;
+        }
+    }
+
+    #constr{
+        width: 100%;
+        position: relative;
+        z-index: 10000000000000;
+    }
+
+    .portfolio{
+        padding-top: 60px;
+        height: 500px;
+        background-color: $color-background;
+        color: $color-white;
+        h2{
+            text-align: center;
+        }
+    }
+
+    .portfoliowrapper{
+        padding-top: 50px;
+        display: flex;
+        margin: 0 10%;
+        justify-content: space-between;
+        .portfolioproject{
+            height: 100px;
+            background-color: white;
+            p{
+                padding-top: 10px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+
+    .contactme{
+        padding-top: 20px;
+        height: 550px;
+        background-color: $color-white;
+        h2{
+            text-align: center;
+        }
+        .contactmewrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 12%;
+            padding-top: 50px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 30px 0;
+        }
+    }
+
+    .contactmeflex2{
+        p{
+            font-size:24px;
+            text-align: center;
+        }
+    }
+    footer{
+        height: 150px;
+        margin: 0 10%;
+        background-color: $color-background;
+        color: $color-white;
+    }
+
+    .bi{
+        color: $color-white;
+        font-size: 48px;
+        padding:0 20px;
+    }
+
+    .socialmedia{
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+
+}
+

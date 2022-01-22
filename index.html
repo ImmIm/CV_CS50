@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kiryl Savich's CV</title>
+    <link rel="icon" type="image/x-icon" href="./Assets/favIcon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="nav">
+        <input type="checkbox" name="" id="burger" class = "burgerbutton">
+        <span class = "bur"></span>
+        <span class = "bur"></span>
+        <span class = "bur"></span>
+        <ul id = "menu">
+            <li><a href="#HOME">HOME</a></li>
+            <li><a href="#EDUCATION">EDUCATION</a></li>
+            <li><a href="#portfolio">PORTFOLIO</a></li>
+            <li><a href="#contacts">CONTACTS</a></li>
+        </ul>
+    </div>
+    <div class="header" id = "HOME">
+        <h1>
+            <p>Kiryl Savich <br></p>
+            <p>Student, future developer, pizza lover</p>
+        </h1>
+        <video id = "myVideo" autoplay muted loop src="./VideoAsset/Wireframe Black Background Loop.mp4"></video>
+    </div>
+    <div class="myself" id = "myself">
+        <table>
+            <tr>
+                <td><div class="photoself animate__animated  animate__fadeInUp">
+                    <img src="./Assets/photo-myself.jpg" alt="Photo of CV person">
+                </div></td>
+                <td><div class="description animate__animated  animate__fadeInUp">
+                    <p>Hi! I'm Kiryl Savich, Front-end student of &nbsp Tel-ran college, learning to do amazing stuff.</p>
+                    <img id = "arrow" src="./Assets/imgonline-com-ua-Mir.png" alt="arrow"> <p class = "arrow"><em>It's me :)</em></p>
+                </div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="edu" id = "EDUCATION">
+        <h1>EDUCATION</h1>
+        <a href = "#telran" id = "circle"><img  src="./Assets/circle.png" alt=""> &nbsp;Tel-Ran</a>
+        <div class="stydies">
+            <div class="line col-xxl-1"></div>
+            <div class="telran col-xxl-3" id = "telran">
+                <img id = "logoTR" src="./Assets/Ellipse 1.png" alt="">
+                <h2>Tel-Ran</h2> 
+                <p>The Masa Hi-Tech program, organized in conjunction with Israel Experience, allows you to combine productive study, acquaintance with Hebrew, a variety of trips to Israel and immersion in its social life.</p>
+                <a href="https://en.tel-ran.com/" target="_blank">Link to college</a>
+                <p>Technologies learned:</p>
+                <img src="./Assets/LanguagesIcons/html5.png" alt="HTML 5">
+                <img src="./Assets/LanguagesIcons/css3.png" alt="CSS 3">
+                <img src="./Assets/LanguagesIcons/javascript-48x48-1982839.png" alt="JavaScript">
+                <img src="./Assets/LanguagesIcons/es-48x48-1982844.png" alt="JS ES6">
+                <img src="./Assets/LanguagesIcons/react.png" alt="React JS">
+                <img src="./Assets/LanguagesIcons/java-48x48-1982840.png" alt="Java">
+                <img src="./Assets/LanguagesIcons/visual-studio.png" alt="Visual Studio Code">
+            </div>
+            <div class="telranprojects col-xxl-3">
+                <h2>Project example</h2> 
+                <div class="exampleTR">
+                    <a href = "https://github.com/ImmIm/CV_projects/blob/main/taskint.java" target="_blank"><span id = "projectNameTR">Int task</span><img src="./Assets/JavaExample.png" alt="JavaCodeExample"></a>
+                </div>
+            </div>
+            <div class="cs50 col-xxl-3" id = "cs50">
+                <img id = "logocs50" src="./Assets/150px-Harvard_University_shield.png" alt="">
+                <h2>CS50: Introduction to Computer Science</h2> 
+                <p>This is CS50x , Harvard University's introduction to the intellectual enterprises of computer science and the art of programming. CS50x teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development..</p>
+                <a href="https://learning.edx.org/course/course-v1:HarvardX+CS50+X/home" target="_blank">Link to course</a>
+                <p>Technologies learned:</p>
+                <img src="./Assets/LanguagesIcons/html5.png" alt="">
+                <img src="./Assets/LanguagesIcons/css3.png" alt="">
+                <img src="./Assets/LanguagesIcons/javascript-48x48-1982839.png" alt="">
+                <img src="./Assets/LanguagesIcons/c-file.png" alt="">
+                <img src="./Assets/LanguagesIcons/python-48x48-1982832.png" alt="">
+                <img src="./Assets/LanguagesIcons/file.png" alt="">
+            </div>
+            <div class="cs50projects col-xxl-3">
+                <h2>Project example</h2> 
+                <div class="examplecs50">
+                    <a href = "https://github.com/me50/ImmIm/blob/cs50/problems/2021/x/filter/less/helpers.c" target="_blank"><span id = "projectNamecs50">CS50 Filter</span><img src="./Assets/CS50Example.png" alt="CCodeExample"></a>
+                </div>
+            </div>
+            <div class="bsu col-xxl-3" id = "bsu">
+                <img id = "logobsu" src="./Assets/ENG_BSU_logo.png" alt="">
+                <h2>Belarusian State University</h2>
+                <p id = "faculty">Faculty of Geography and Geoinformatics</p>
+                <p>The Faculty of Geography at the Belarusian State University was founded in 1934. Over the years of its existence more than 8 000 specialists have been trained here. Among them there are 30 Doctors of Science (ScD) and 150 Candidates of Science (PhD).</p>
+                <a href="https://geo.bsu.by/index.php/en/" target="_blank">Link to University</a>
+                <p>Technologies learned:</p>
+                <img src="./Assets/geology.png" alt="">
+                <img src="./Assets/dwg.png" alt="">
+            </div>
+            <div class="bsuprojects col-xxl-3">
+                <h2>Project example</h2> 
+                <div class="examplebsu">
+                    <a href = "https://drive.google.com/file/d/1u1TlSZeuXxkTLSE29MR9C6i-Z5o2nGwk/view?usp=sharing" target="_blank"><span id = "projectNamebsu">BSU Diploma work</span><img src="./Assets/BSU.png" alt="CCodeExample"></a>
+                </div>
+            </div>
+            </div>
+            <a href = "#cs50" id = "circle1"><img  src="./Assets/circle.png" alt=""> &nbsp;CS 50</a>
+            <a href = "#bsu" id = "circle2"><img  src="./Assets/circle.png" alt=""> &nbsp;BSU</a>
+        </div>
+    </div>
+    <div class="portfolio" id = "portfolio">
+        <h2>PORTFOLIO</h2>
+        <div class="portfoliowrapper">
+            <div class="portfolioproject col-xxl-3"><a href="#portfolio"><img src="./Assets/workinprogress.png" alt=""></a><p>Some description of future project</p></div>
+            <div class="portfolioproject col-xxl-3"><a href="#portfolio"><img src="./Assets/workinprogress.png" alt=""></a><p>Some description of future project</p></div>
+            <div class="portfolioproject col-xxl-3"><a href="#portfolio"><img src="./Assets/workinprogress.png" alt=""></a><p>Some description of future project</p></div>
+        </div>
+    </div>
+    <div class="contactme" id = "contacts">
+        <h2>Stay in touch</h2>
+        <div class="contactmewrapper">
+            <div class="contactmeflex1">
+                <p>Some random facts about me</p>
+                <ul>
+                    <li><span>In 2020 I almost get Ahead of the Curve achievement in WOW:Shadowlands.</span></li>
+                    <li><span>My first programming experience was in 2011, when I've created Snake game with C++.</span></li>
+                    <li><span>For 2 years I've participated in voluntary activity restoring Jewish cemeteries in Belarus.</span></li>
+                    <li><span>I know Russian (as native speaker), Belorusian, English (B2 level) and now learning Hebrew.</span></li>
+                </ul>
+            </div>
+            <div class="contactmeflex2">
+                <p>Leave me a message</p>
+                <form action="#" method="get" id = "form">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="Email">Email:</label></td>
+                                <td><input type="email" name = "Email" value="" placeholder="yourmailaddress@site.com"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="Message">Message:</label></td>
+                                <td><textarea name="Message" name = "Message" cols="30" rows="10" placeholder="Leave your mesage here..."></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><label for="Gender">Gender:</label></td>
+                                <td><label>
+                                    Male:
+                                    <input type = "radio" value =  "Male" name = "gender">
+                                </label>
+                                <label>
+                                    Female:
+                                    <input type = "radio" value =  "Female" name = "gender">
+                                </label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="submit" value="Submit"><input type="reset" value="Reset"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.linkedin.com/in/kirylsavich/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100001819076928"><i class="bi bi-facebook"></i></i></a>
+            <a href="http://t.me/@immim"><i class="bi bi-telegram"></i></i></a>
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
